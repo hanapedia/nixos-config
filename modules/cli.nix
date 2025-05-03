@@ -23,6 +23,7 @@
     tmux
     tailscale
     gcc
+    ripgrep
   ];
 
   environment.variables.EDITOR = "neovim";
