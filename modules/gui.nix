@@ -5,5 +5,7 @@
     google-chrome
   ];
 
+  programs.firefox.enable = true;
+
   environment.variables.EDITOR = "neovim";
 }
