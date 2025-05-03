@@ -1,9 +1,9 @@
 { config, pkgs, ... }: {
   imports = [
-    # ../modules/hardware-configuration.nix
-    ../modules/base.nix
-    ../modules/user.nix
-    ../modules/cli.nix
+    # ./hardware-configuration.nix
+    ../../modules/base.nix
+    ../../modules/user.nix
+    ../../modules/cli.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
