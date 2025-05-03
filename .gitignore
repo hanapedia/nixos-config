@@ -1,0 +1,25 @@
+# Ignore common system/editor artifacts
+*.swp
+*.swo
+*.bak
+*~
+
+# Ignore editor/project files
+.vscode/
+.idea/
+.DS_Store
+
+# Nix build artifacts (just in case you use nix build)
+result*
+.result-tmp*
+
+# Don't track sensitive keys or secrets if you put any
+secrets.nix
+secrets/
+
+# Optional: ignore hardware-configuration.nix if you regenerate frequently
+# hosts/*/hardware-configuration.nix
+
+# Optional: ignore flake.lock if you want to regenerate it often
+# (but usually it's better to commit it for reproducibility!)
+# flake.lock
