@@ -11,8 +11,16 @@
       nixos-server = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/nixos-server/configuration.nix
-          { networking.hostName = "nixos-server"; }
+          ./hosts/nixos-server-r555/configuration.nix
+          { networking.hostName = "nixos-server-r555"; }
+        ];
+      };
+
+      nixos-server = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixos-server-r514/configuration.nix
+          { networking.hostName = "nixos-server-r514"; }
         ];
       };
 
