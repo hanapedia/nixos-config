@@ -30,6 +30,24 @@ nix flake update
 
 3. Add a new entry under `nixosConfigurations` in `flake.nix`
  
+## Typical Flow After a Fresh Headless Install
+
+```bash
+# Temporarily install Git
+nix-shell -p git
+
+# Clone your configuration repository
+git clone https://github.com/hanapedia/nixos-config.git
+cd nixos-config
+
+# Rebuild the system using your flake config
+sudo nixos-rebuild switch --flake .#nixos-router
+
+# Authenticate to Tailscale using a QR code
+nix-shell -p qrencode
+./scripts/tailscale-up-qr.sh
+```
+
 ## Notes
 `hardware-configuration.nix` is host-specific and generated using `nixos-generate-config`.
 
