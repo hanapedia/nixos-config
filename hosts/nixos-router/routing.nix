@@ -29,28 +29,30 @@
     defaultGateway = "192.168.1.1";
   };
 
-  services.isc-dhcp-server = {
+  services.dnsmasq = {
     enable = true;
-    interfaces = [ "enp2s0" "enp3s0" "enp4s0" ];
-    sharedNetworks = {
-      "192-168-10" = {
-        subnet = "192.168.10.0";
-        netmask = "255.255.255.0";
-        range = [ "192.168.10.2" "192.168.10.255" ];
-        routers = [ "192.168.10.1" ];
-      };
-      "192-168-20" = {
-        subnet = "192.168.20.0";
-        netmask = "255.255.255.0";
-        range = [ "192.168.20.2" "192.168.20.255" ];
-        routers = [ "192.168.20.1" ];
-      };
-      "192-168-30" = {
-        subnet = "192.168.30.0";
-        netmask = "255.255.255.0";
-        range = [ "192.168.30.2" "192.168.30.255" ];
-        routers = [ "192.168.30.1" ];
-      };
+
+    settings = {
+      # Interface-specific settings
+      interface = [ "enp2s0" "enp3s0" "enp4s0" ];
+      bind-interfaces = true;
+
+      # Disable DNS if you're only using DHCP
+      port = 0;
+
+      # Subnet for enp2s0
+      dhcp-range = [
+        "enp2s0,192.168.10.100,192.168.10.200,255.255.255.0,24h"
+        "enp3s0,192.168.20.100,192.168.20.200,255.255.255.0,24h"
+        "enp4s0,192.168.30.100,192.168.30.200,255.255.255.0,24h"
+      ];
+
+      # Set the gateway (router) address for each subnet
+      dhcp-option = [
+        "enp2s0,3,192.168.10.1"
+        "enp3s0,3,192.168.20.1"
+        "enp4s0,3,192.168.30.1"
+      ];
     };
   };
 }
