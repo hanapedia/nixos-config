@@ -2,9 +2,10 @@
   # Configuration for router with
   # 1. no NAT capability
   # 2. subnet with DHCP for NICs enp2s0, enp3s0, enp4s0
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = true;
+  };
   networking = {
-    enableIPv4Forwarding = true;
-
     interfaces = {
       enp1s0.useDHCP = true;  # Home router uplink
 
