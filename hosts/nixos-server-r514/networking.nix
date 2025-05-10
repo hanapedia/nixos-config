@@ -9,7 +9,7 @@
   };
 
   # bgp setup using BIRD
-  services.bird = {
+  services.bird2 = {
     enable = true;
     package = pkgs.bird3;
     config = ''

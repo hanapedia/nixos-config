@@ -14,5 +14,5 @@
   services.tailscale.enable = true;
   services.openssh.enable = true;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "24.11";
 }
