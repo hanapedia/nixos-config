@@ -80,8 +80,11 @@
       protocol kernel {
         persist;
         scan time 20;
-        import all;
-        export all;
+
+        ipv4 {
+          import all;
+          export all;
+        };
       }
 
       protocol device {
@@ -93,8 +96,10 @@
         local as 65000;
         neighbor 192.168.10.10 as 65001;
 
-        import all;
-        export all;
+        ipv4 {
+          import all;
+          export all;
+        };
       }
 
       # Peer with nixos-server-r514
@@ -102,8 +107,10 @@
         local as 65000;
         neighbor 192.168.20.10 as 65002;
 
-        import all;
-        export all;
+        ipv4 {
+          import all;
+          export all;
+        };
       }
     '';
   };

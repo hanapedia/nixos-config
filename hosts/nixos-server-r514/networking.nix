@@ -1,4 +1,4 @@
-{
+{ config, pkgs, ... }: {
   networking = {
     interfaces.enp35s0.ipv4.addresses = [{
       address = "192.168.20.10";
@@ -19,8 +19,11 @@
       protocol kernel {
         persist;
         scan time 20;
-        import all;
-        export all;
+
+        ipv4 {
+          import all;
+          export all;
+        };
       }
 
       protocol device {
@@ -36,8 +39,10 @@
         local as 65002;
         neighbor 192.168.20.1 as 65000;
 
-        import all;
-        export where proto = "static";
+        ipv4 {
+          import all;
+          export where proto = "static";
+        };
       }
     '';
   };
