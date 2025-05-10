@@ -24,6 +24,7 @@
     tailscale
     gcc
     ripgrep
+    tcpdump
   ];
 
   environment.variables.EDITOR = "neovim";
