@@ -8,6 +8,9 @@
     nameservers = [ "8.8.8.8" ];
   };
 
+  # allow bgp port
+  networking.firewall.allowedTCPPorts = [ 179 ];
+
   # bgp setup using BIRD
   services.bird2 = {
     enable = true;
