@@ -68,4 +68,44 @@
       ];
     };
   };
+
+  # bgp setup using BIRD
+  environment.systemPackages = [ pkgs.bird3 ];
+  services.bird = {
+    enable = true;
+    package = pkgs.bird3;
+    config = ''
+      log syslog all;
+      router id 192.168.1.200;
+
+      protocol kernel {
+        persist;
+        scan time 20;
+        import all;
+        export all;
+      }
+
+      protocol device {
+        scan time 10;
+      }
+
+      # Peer with nixos-server-r555
+      protocol bgp r555 {
+        local as 65000;
+        neighbor 192.168.10.10 as 65001;
+
+        import all;
+        export all;
+      }
+
+      # Peer with nixos-server-r514
+      protocol bgp r514 {
+        local as 65000;
+        neighbor 192.168.20.10 as 65002;
+
+        import all;
+        export all;
+      }
+    '';
+  };
 }
