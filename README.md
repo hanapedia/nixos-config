@@ -2,7 +2,8 @@
 
 This repository contains a flake-based, multi-host NixOS configuration for managing two machines:
 
-- `nixos-server`: a desktop system with GUI, development tools, and user-specific setup
+- `nixos-server-<cpu abbr>`: a desktop system with GUI, development tools, and user-specific setup
+  - e.g. for `<cpu abbr>`: r514 = Ryzen 5 1400, r555 = Ryzen 5 5500, etc
 - `nixos-router`: a minimal router/server system with essential networking and firewall configuration
 
 ## Usage
@@ -43,9 +44,8 @@ cd nixos-config
 # Rebuild the system using your flake config
 sudo nixos-rebuild switch --flake .#nixos-router
 
-# Authenticate to Tailscale using a QR code
-nix-shell -p qrencode
-./scripts/tailscale-up-qr.sh
+# Authenticate to Tailscale using a smartphone camera with OCR
+sudo tailscale up
 ```
 
 ## Notes
