@@ -1,6 +1,6 @@
 {
   networking = {
-    interfaces.enp5s0.ipv4.addresses = [{
+    interfaces.enp35s0.ipv4.addresses = [{
       address = "192.168.20.10";
       prefixLength = 24;
     }];
