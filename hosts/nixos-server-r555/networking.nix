@@ -31,6 +31,7 @@
       }
 
       protocol static {
+        ipv4;
         # Container subnet on this node
         route 10.1.0.0/24 via "br0";  # Replace "br0" with your actual container bridge
       }
