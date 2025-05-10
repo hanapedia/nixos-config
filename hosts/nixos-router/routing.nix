@@ -27,6 +27,13 @@
 
     # Optional: Set home router as default route
     defaultGateway = "192.168.1.1";
+
+    # enable NAT so that home router can return packets from internet
+    nat = {
+      enable = true;
+      internalInterfaces = [ "enp2s0" "enp3s0" "enp4s0" ];
+      externalInterface = "enp1s0";
+    };
   };
 
   services.dnsmasq = {
