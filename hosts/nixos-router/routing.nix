@@ -38,7 +38,13 @@
       bind-interfaces = true;
 
       # Disable DNS if you're only using DHCP
-      port = 0;
+      port = 53;
+
+      # Prevent it from using /etc/resolv.conf
+      no-resolv = true;
+
+      # Explicit upstream resolvers
+      server = [ "8.8.8.8" "1.1.1.1" ];
 
       # Subnet for enp2s0
       dhcp-range = [
