@@ -9,7 +9,6 @@
   };
 
   # bgp setup using BIRD
-  environment.systemPackages = [ pkgs.bird3 ];
   services.bird = {
     enable = true;
     package = pkgs.bird3;
