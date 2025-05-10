@@ -5,6 +5,7 @@
     ../../modules/base.nix
     ../../modules/user.nix
     ../../modules/cli.nix
+    ../../modules/security.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
