@@ -12,8 +12,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.networkmanager.enable = true;
-  services.tailscale.enable = true;
-  services.openssh.enable = true;
 
   system.stateVersion = "24.11";
 }
