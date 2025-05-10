@@ -45,7 +45,7 @@
 
         ipv4 {
           import all;
-          export where proto = "static";
+          export all;
         };
       }
     '';
