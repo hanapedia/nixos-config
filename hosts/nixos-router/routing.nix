@@ -94,6 +94,12 @@
         scan time 10;
       }
 
+      # Static routes for nodes connected via NICs with their own subnet
+      protocol static node-subnets {
+        route 192.168.10.0/24 via "enp2s0";
+        route 192.168.20.0/24 via "enp3s0";
+      }
+
       # Peer with nixos-server-r555
       protocol bgp r555 {
         local as 65000;
