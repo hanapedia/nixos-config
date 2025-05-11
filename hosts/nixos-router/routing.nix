@@ -95,7 +95,8 @@
       }
 
       # Static routes for nodes connected via NICs with their own subnet
-      protocol static node-subnets {
+      protocol static nic_subnets {
+        ipv4;
         route 192.168.10.0/24 via "enp2s0";
         route 192.168.20.0/24 via "enp3s0";
       }
