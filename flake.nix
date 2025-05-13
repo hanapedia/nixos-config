@@ -8,6 +8,14 @@
 
   outputs = { self, nixpkgs, flake-utils, ... }: {
     nixosConfigurations = {
+      nixos-server-r596 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixos-server-r596/configuration.nix
+          { networking.hostName = "nixos-server-r596"; }
+        ];
+      };
+      
       nixos-server-r555 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
