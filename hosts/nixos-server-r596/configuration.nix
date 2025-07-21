@@ -8,6 +8,7 @@
     ../../modules/cli.nix
     ../../modules/gui.nix
     ../../modules/gaming.nix
+    ../../modules/radeon.nix
     ../../modules/security.nix
   ];
 

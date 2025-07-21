@@ -3,7 +3,6 @@
     wl-clipboard
     ghostty
     obsidian
-    lact
   ];
 
   programs.firefox.enable = true;
