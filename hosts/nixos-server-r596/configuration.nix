@@ -16,4 +16,9 @@
   networking.networkmanager.enable = true;
 
   system.stateVersion = "25.05";
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 }
