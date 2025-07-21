@@ -9,7 +9,7 @@
   };
 
   fonts.packages = with pkgs; [
-    (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
+    pkgs.nerd-fonts.hack
   ];
 
   services.printing.enable = true;
