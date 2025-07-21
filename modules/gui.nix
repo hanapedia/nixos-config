@@ -2,7 +2,7 @@
   environment.systemPackages = with pkgs; [
     wl-clipboard
     ghostty
-    google-chrome
+    obsidian
   ];
 
   programs.firefox.enable = true;
