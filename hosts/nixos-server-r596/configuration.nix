@@ -7,6 +7,7 @@
     ../../modules/user.nix
     ../../modules/cli.nix
     ../../modules/gui.nix
+    ../../modules/gaming.nix
     ../../modules/security.nix
   ];
 
