@@ -26,6 +26,7 @@
     ripgrep
     tcpdump
     gnumake
+    ghostty
   ];
 
   environment.variables.EDITOR = "neovim";
