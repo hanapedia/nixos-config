@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/gc.nix
     # ./routing.nix
     ../../modules/base.nix
     ../../modules/desktop.nix
