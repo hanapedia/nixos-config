@@ -11,6 +11,7 @@
     ../../modules/radeon.nix
     ../../modules/security.nix
     ../../modules/languages.nix
+    ../../modules/virtualization.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
