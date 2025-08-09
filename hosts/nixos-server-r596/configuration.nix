@@ -9,6 +9,7 @@
     ../../modules/gui.nix
     ../../modules/radeon.nix
     ../../modules/security.nix
+    ../../modules/languages.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
