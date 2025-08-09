@@ -27,6 +27,8 @@
     tcpdump
     gnumake
     ghostty
+    ghq
+    bat
   ];
 
   environment.variables.EDITOR = "neovim";
