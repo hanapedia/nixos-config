@@ -6,6 +6,7 @@
     ../../modules/user.nix
     ../../modules/cli.nix
     ../../modules/security.nix
+    ../../modules/languages.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
