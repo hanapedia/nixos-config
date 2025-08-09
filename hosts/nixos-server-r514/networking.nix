@@ -12,7 +12,7 @@
   networking.firewall.allowedTCPPorts = [ 179 ];
 
   # bgp setup using BIRD
-  services.bird2 = {
+  services.bird = {
     enable = true;
     package = pkgs.bird3;
     config = ''
