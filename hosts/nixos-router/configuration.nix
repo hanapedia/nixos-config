@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./routing.nix
+    ../../modules/gc.nix
     ../../modules/base.nix
     ../../modules/user.nix
     ../../modules/cli.nix
