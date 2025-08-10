@@ -13,7 +13,6 @@
     ../../modules/languages.nix
     ../../modules/virtualization.nix
     ../../modules/registry.nix
-    ../../modules/gitops.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
