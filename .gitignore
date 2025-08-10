@@ -17,6 +17,7 @@ result*
 secrets.nix
 secrets/
 
+build/**
 # Optional: ignore hardware-configuration.nix if you regenerate frequently
 # hosts/*/hardware-configuration.nix
 

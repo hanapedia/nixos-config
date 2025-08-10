@@ -4,7 +4,6 @@
 
   systemd.tmpfiles.rules = [
     "d /srv/registry 0755 root root -"
-    "d /srv/registry/certs 0755 root root -"
   ];
 
   virtualisation.oci-containers.containers.registry = {
@@ -20,7 +19,7 @@
   networking.firewall.allowedTCPPorts = [ 5000 ];
 
   systemd.services."podman-registry".serviceConfig = {
-    Restart = "on-failure";
+    Restart = "always";
     RestartSec = 5;
     StartLimitIntervalSec = 0;
     TimeoutStartSec = 0;

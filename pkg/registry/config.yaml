@@ -6,9 +6,6 @@ storage:
     rootdirectory: /var/lib/registry
 http:
   addr: 0.0.0.0:5000
-  tls:
-    certificate: /certs/registry.crt
-    key: /certs/registry.key
 proxy:
   remoteurl: https://registry-1.docker.io
 delete:

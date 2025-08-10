@@ -12,6 +12,7 @@
     ../../modules/security.nix
     ../../modules/languages.nix
     ../../modules/virtualization.nix
+    ../../modules/registry.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
