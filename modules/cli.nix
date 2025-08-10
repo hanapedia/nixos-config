@@ -29,6 +29,7 @@
     ghostty
     ghq
     bat
+    openssl
   ];
 
   environment.variables.EDITOR = "neovim";
