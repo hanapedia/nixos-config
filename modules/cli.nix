@@ -30,6 +30,12 @@
     ghq
     bat
     openssl
+    bpftools
+    clang 
+    llvm
+    libbpf
+    bcc
+    bpftrace
   ];
 
   environment.variables.EDITOR = "neovim";
