@@ -23,6 +23,7 @@
     bpftools
     bpftrace
     clang 
+    clang-tools
     fish
     fishPlugins.bobthefish
     fishPlugins.fzf-fish
