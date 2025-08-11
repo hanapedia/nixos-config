@@ -18,24 +18,16 @@
   # alphabetical order
   environment.systemPackages = with pkgs; [
     bat
-    bcc
-    bear
     bpftools
     bpftrace
-    clang 
-    clang-tools
     fish
     fishPlugins.bobthefish
     fishPlugins.fzf-fish
     fzf
-    gcc
     ghostty
     ghq
     gnumake
-    libbpf
-    llvm
     openssl
-    pkg-config
     ripgrep
     tailscale
     tcpdump
