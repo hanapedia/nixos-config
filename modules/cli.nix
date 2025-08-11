@@ -15,27 +15,29 @@
 
   programs.tmux.enable = true;
 
+  # alphabetical order
   environment.systemPackages = with pkgs; [
+    bat
+    bcc
+    bpftools
+    bpftrace
+    clang 
     fish
-    fishPlugins.fzf-fish
     fishPlugins.bobthefish
+    fishPlugins.fzf-fish
     fzf
-    tmux
-    tailscale
     gcc
-    ripgrep
-    tcpdump
-    gnumake
     ghostty
     ghq
-    bat
-    openssl
-    bpftools
-    clang 
-    llvm
+    gnumake
     libbpf
-    bcc
-    bpftrace
+    llvm
+    openssl
+    ripgrep
+    tailscale
+    tcpdump
+    tmux
+    unzip
   ];
 
   environment.variables.EDITOR = "neovim";
