@@ -19,6 +19,7 @@
   environment.systemPackages = with pkgs; [
     bat
     bcc
+    bear
     bpftools
     bpftrace
     clang 
