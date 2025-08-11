@@ -35,6 +35,7 @@
     libbpf
     llvm
     openssl
+    pkg-config
     ripgrep
     tailscale
     tcpdump
