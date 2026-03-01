@@ -33,6 +33,7 @@
     tcpdump
     tmux
     unzip
+    claude-code
   ];
 
   environment.variables.EDITOR = "neovim";
