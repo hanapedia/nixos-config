@@ -9,7 +9,7 @@
     ../../modules/cli.nix
     ../../modules/gui.nix
     ../../modules/radeon.nix
-    /* ../../modules/gaming.nix */
+    ../../modules/gaming.nix
     ../../modules/security.nix
     ../../modules/languages.nix
     ../../modules/virtualization.nix
