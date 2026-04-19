@@ -34,6 +34,7 @@
     tmux
     unzip
     claude-code
+    yq-go
   ];
 
   environment.variables.EDITOR = "neovim";
