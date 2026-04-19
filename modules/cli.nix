@@ -35,6 +35,7 @@
     unzip
     claude-code
     yq-go
+    go-task
   ];
 
   environment.variables.EDITOR = "neovim";
