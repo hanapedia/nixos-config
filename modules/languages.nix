@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     go
-    zig
-    zls
+    /* zig */
+    /* zls */
     llvm
     lldb
     clang
