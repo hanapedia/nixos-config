@@ -5,4 +5,6 @@
     kind
     kubectl
   ];
+
+  users.users.hanapedia.extraGroups = [ "docker" ];
 }
