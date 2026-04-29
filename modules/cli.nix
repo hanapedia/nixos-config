@@ -35,6 +35,7 @@
     unzip
     claude-code
     yq-go
+    jq
     go-task
   ];
 
