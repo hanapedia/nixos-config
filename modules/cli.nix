@@ -37,6 +37,7 @@
     yq-go
     jq
     go-task
+    gh
   ];
 
   environment.variables.EDITOR = "neovim";
