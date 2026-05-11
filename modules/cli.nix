@@ -39,6 +39,8 @@
     go-task
     gh
     dig
+    gobgp
+    gobgpd
   ];
 
   environment.variables.EDITOR = "neovim";
