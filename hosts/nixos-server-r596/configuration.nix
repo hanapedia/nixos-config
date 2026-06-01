@@ -45,4 +45,6 @@
     iptables -D FORWARD -s 192.168.0.0/16 -j ACCEPT || true
     iptables -D FORWARD -d 192.168.0.0/16 -j ACCEPT || true
   '';
+  # disable rp_filter
+  boot.kernel.sysctl."net.ipv4.conf.default.rp_filter" = 0;
 }
