@@ -29,22 +29,31 @@
   };
 
   # allow privates address
-  networking.firewall.extraCommands = ''
-    iptables -I FORWARD -s 10.0.0.0/8 -j ACCEPT
-    iptables -I FORWARD -d 10.0.0.0/8 -j ACCEPT
-    iptables -I FORWARD -s 172.16.0.0/12 -j ACCEPT
-    iptables -I FORWARD -d 172.16.0.0/12 -j ACCEPT
-    iptables -I FORWARD -s 192.168.0.0/16 -j ACCEPT
-    iptables -I FORWARD -d 192.168.0.0/16 -j ACCEPT
-  '';
-  networking.firewall.extraStopCommands = ''
-    iptables -D FORWARD -s 10.0.0.0/8 -j ACCEPT || true
-    iptables -D FORWARD -d 10.0.0.0/8 -j ACCEPT || true
-    iptables -D FORWARD -s 172.16.0.0/12 -j ACCEPT || true
-    iptables -D FORWARD -d 172.16.0.0/12 -j ACCEPT || true
-    iptables -D FORWARD -s 192.168.0.0/16 -j ACCEPT || true
-    iptables -D FORWARD -d 192.168.0.0/16 -j ACCEPT || true
-  '';
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = ["docker0" "br-+"];
+    checkReversePath = false;
+    # extraCommands = ''
+    #   iptables -I FORWARD -s 10.0.0.0/8 -j ACCEPT
+    #   iptables -I FORWARD -d 10.0.0.0/8 -j ACCEPT
+    #   iptables -I FORWARD -s 172.16.0.0/12 -j ACCEPT
+    #   iptables -I FORWARD -d 172.16.0.0/12 -j ACCEPT
+    #   iptables -I FORWARD -s 192.168.0.0/16 -j ACCEPT
+    #   iptables -I FORWARD -d 192.168.0.0/16 -j ACCEPT
+    # '';
+    # extraStopCommands = ''
+    #   iptables -D FORWARD -s 10.0.0.0/8 -j ACCEPT || true
+    #   iptables -D FORWARD -d 10.0.0.0/8 -j ACCEPT || true
+    #   iptables -D FORWARD -s 172.16.0.0/12 -j ACCEPT || true
+    #   iptables -D FORWARD -d 172.16.0.0/12 -j ACCEPT || true
+    #   iptables -D FORWARD -s 192.168.0.0/16 -j ACCEPT || true
+    #   iptables -D FORWARD -d 192.168.0.0/16 -j ACCEPT || true
+    # '';
+  };
   # disable rp_filter
-  boot.kernel.sysctl."net.ipv4.conf.default.rp_filter" = 0;
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+    "net.bridge.bridge-nf-call-iptables" = 1;
+  };
+  boot.kernelModules = ["br_netfilter"];
 }
