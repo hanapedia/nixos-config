@@ -20,6 +20,7 @@
     bat
     bpftools
     bpftrace
+    libbpf
     fish
     fishPlugins.bobthefish
     fishPlugins.fzf-fish
@@ -42,6 +43,4 @@
     gobgp
     gobgpd
   ];
-
-  environment.variables.EDITOR = "neovim";
 }
