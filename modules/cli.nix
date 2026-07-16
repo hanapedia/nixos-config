@@ -42,5 +42,8 @@
     dig
     gobgp
     gobgpd
+    util-linux
+    gptfdisk
+    e2fsprogs
   ];
 }
