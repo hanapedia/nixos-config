@@ -56,4 +56,9 @@
     "net.bridge.bridge-nf-call-iptables" = 1;
   };
   boot.kernelModules = ["br_netfilter"];
+
+  fileSystems."/data" = {
+    device = "/dev/disk/by-uuid/121fce1a-0da9-42d3-9ea5-d84d62ab79fc";
+    fsType = "ext4";
+  };
 }
