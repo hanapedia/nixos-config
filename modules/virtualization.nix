@@ -5,6 +5,7 @@
     kind
     kubectl
     kustomize
+    helm
   ];
 
   users.users.hanapedia.extraGroups = [ "docker" ];
