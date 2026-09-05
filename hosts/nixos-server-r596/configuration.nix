@@ -61,4 +61,6 @@
     device = "/dev/disk/by-uuid/121fce1a-0da9-42d3-9ea5-d84d62ab79fc";
     fsType = "ext4";
   };
+  # allow running pre built bins
+  programs.nix-ld.enable = true;
 }

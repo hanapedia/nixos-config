@@ -18,22 +18,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # Enable input method framework
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-configtool
-    ];
-  };
-
-  # Install Japanese fonts
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    mplus-outline-fonts.renamed
-    ipafont
-  ];
 }
