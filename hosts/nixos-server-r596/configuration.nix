@@ -63,4 +63,6 @@
   };
   # allow running pre built bins
   programs.nix-ld.enable = true;
+  # allow edits to /etc/hosts
+  environment.etc."hosts".mode = "0644";
 }
