@@ -5,15 +5,13 @@
     /* zls */
     llvm
     lldb
-    clang
+    llvmPackages.clang-unwrapped
     bear
     bpftools
     bpftrace
     clang-tools
     gnumake
     libbpf
-    /* llvmPackages_18.clang-unwrapped */
-    /* llvmPackages_18.bintools */
     pkg-config
 
   ];
