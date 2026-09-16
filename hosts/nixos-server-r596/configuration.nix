@@ -55,7 +55,7 @@
     "net.ipv4.ip_forward" = 1;
     "net.bridge.bridge-nf-call-iptables" = 1;
   };
-  boot.kernelModules = ["br_netfilter"];
+  boot.kernelModules = ["br_netfilter" "fou"];
 
   fileSystems."/data" = {
     device = "/dev/disk/by-uuid/121fce1a-0da9-42d3-9ea5-d84d62ab79fc";
@@ -65,4 +65,8 @@
   programs.nix-ld.enable = true;
   # allow edits to /etc/hosts
   environment.etc."hosts".mode = "0644";
+
+  systemd.tmpfiles.rules = [
+    "L+ /lib/modules - - - - /run/booted-system/kernel-modules/lib/modules"
+  ];
 }
